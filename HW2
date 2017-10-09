@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class recPow {
+	
+	public static void main(String args[]) throws NullPointerException {
+		
+		System.out.println("Enter n:");
+		Scanner exponent = new Scanner(System.in);
+		int n = exponent.nextInt();
+		if (n <=0){
+		System.out.println ("Please enter a positive number.");
+		}
+		System.out.println("The exponent you have entered is: " + n);
+	    for (int i = 1; i <= n; i++) {
+	        System.out.println(recPow( i));
+	        
+	    } 
+	}
+	
+	public static int recPow( int n) {
+		int base = 2;
+	    if (n < 0) {
+	        throw new IllegalArgumentException("Illegal Power Argument");
+	    }
+	    if (n == 0) {
+	        return 1;
+	    } else {	    	
+	        return base * recPow(n - 1);
+	    }
+	}
+}
+	
+	
+	
+	
