@@ -1,0 +1,27 @@
+import math
+import matplotlib.pyplot as plt
+
+def f(n):
+    result = math.pow(math.sin(n-2),2) * math.pow(math.e,- (math.pow(n,2)));
+    return result;
+
+input = [];
+output = [];
+iteration = 0;
+while iteration <= 2:
+    input.append(iteration);
+    iteration = iteration + 0.08;
+
+iteration = 0;
+while iteration < len(input):
+    output.append(f(input[iteration]));
+    iteration = iteration + 1;
+print(math.pi);
+print (output);
+plt.xlabel("X-Axis");
+plt.ylabel("Y-Axis");
+plt.title("sin^2(x-2)e^(-x^2)");
+plt.ylim(0,1.5);
+plt.xlim(0,2.5);
+plt.plot(input,output);
+plt.show()
